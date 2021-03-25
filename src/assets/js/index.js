@@ -29,5 +29,6 @@ function render(map, IPInfo) {
 
     map.setCoordinates(lat, lng);
     map.setCircle();
+    input.setValue('');
   });
 }

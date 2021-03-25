@@ -7,6 +7,9 @@ class Input {
   getValue() {
     return this.value;
   }
+  setValue(newValue) {
+    return (DOMElements.input.value = newValue);
+  }
   validateInput() {
     if (this.value.length < 3) {
       return;
