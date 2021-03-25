@@ -15,8 +15,6 @@ class Map {
   }
   changeMapCords() {
     this.map.panTo([this.latitude, this.longitude]);
-
-    return this.setCircle();
   }
   setCircle() {
     return L.circle([this.latitude, this.longitude], {
@@ -31,8 +29,6 @@ class Map {
       [this.latitude, this.longitude],
       13
     );
-
-    return this.setTileLayer();
   }
   setTileLayer() {
     L.tileLayer(
