@@ -14,8 +14,13 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function render(map, IPInfo) {
-  const input = new Input();
+  const input = new Input(DOMElements.input);
   const ipAddress = input.getValue();
+  const inputIsValid = input.validateInput();
+
+  if (!inputIsValid) {
+    return;
+  }
 
   getIPLocation(ipAddress).then(async data => {
     const {
