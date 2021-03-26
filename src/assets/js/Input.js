@@ -17,6 +17,17 @@ class Input {
       return false;
     }
   }
+  indicateInvalidInput(state) {
+    if (state) {
+      this.input.classList.add('shadow-inner');
+      this.input.classList.add('placeholder-red-700');
+      this.input.classList.add('text-red-700');
+    } else {
+      this.input.classList.remove('shadow-inner');
+      this.input.classList.remove('placeholder-red-700');
+      this.input.classList.remove('text-red-700');
+    }
+  }
 }
 
 export default Input;

@@ -15,10 +15,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
 function render(map, IPInfo) {
   const input = new Input(DOMElements.input);
+  input.indicateInvalidInput(false);
   const ipAddress = input.getValue();
   const inputIsValid = input.validateInput();
 
   if (!inputIsValid) {
+    input.indicateInvalidInput(true);
     return;
   }
 
