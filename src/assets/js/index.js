@@ -11,6 +11,11 @@ window.addEventListener('DOMContentLoaded', () => {
   map.setTileLayer();
 
   DOMElements.btn.addEventListener('click', () => render(map, IPInfo));
+  DOMElements.input.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      return render(map, IPInfo);
+    }
+  });
 });
 
 function render(map, IPInfo) {
