@@ -1,7 +1,8 @@
 import DOMElements from './DOMElements';
 
 class IPInfoValues {
-  constructor() {
+  constructor(DOMElement) {
+    this.ipInfoContainer = DOMElement;
     this.IPAdress = null;
     this.location = null;
     this.timezone = null;
@@ -18,6 +19,15 @@ class IPInfoValues {
     this.location = city + ', ' + region;
     this.timezone = timezone;
     this.isp = isp;
+  }
+  collapseContainer(state) {
+    if (state) {
+      this.ipInfoContainer.classList.toggle('opacity-5');
+      this.ipInfoContainer.classList.toggle('pointer-events-none');
+    } else {
+      this.ipInfoContainer.classList.remove('opacity-5');
+      this.ipInfoContainer.classList.remove('pointer-events-none');
+    }
   }
 }
 
