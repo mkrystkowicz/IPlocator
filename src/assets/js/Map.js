@@ -18,8 +18,8 @@ class Map {
   }
   setCircle() {
     return L.circle([this.latitude, this.longitude], {
-      color: 'red',
-      fillColor: '#f03',
+      color: '#374151',
+      fillColor: '#9CA3AF',
       fillOpacity: 0.4,
       radius: 750,
     }).addTo(this.map);
