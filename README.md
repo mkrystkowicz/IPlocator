@@ -4,6 +4,7 @@
 
 ```
 Locating and IP address is the main job of this app. It was made for learning purposes - tailwindcss and asynchronous JS.
+!!! While using Brave Browser, or some king of ghosters scripts - turn it off, without it app won't work correctly! !!!
 ```
 
 ### LIVE:
