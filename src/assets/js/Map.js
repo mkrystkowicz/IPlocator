@@ -29,19 +29,29 @@ class Map {
       [this.latitude, this.longitude],
       13
     );
+
+    this.setMapBounds();
   }
   setTileLayer() {
     L.tileLayer(
       'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
       {
         attribution: false,
-        maxZoom: 18,
+        minZoom: 3,
+        maxZoom: 13,
         id: 'mapbox/dark-v10',
         tileSize: 512,
         zoomOffset: -1,
         accessToken: process.env.LEAFLET_ACCESS_KEY,
       }
     ).addTo(this.map);
+  }
+  setMapBounds() {
+    const southWest = L.latLng(-90, 180);
+    const northEast = L.latLng(90, -180);
+    let bounds = L.latLngBounds(southWest, northEast);
+
+    this.map.setMaxBounds(bounds);
   }
 }
 
