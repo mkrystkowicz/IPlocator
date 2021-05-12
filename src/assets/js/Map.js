@@ -14,7 +14,12 @@ class Map {
     return this.changeMapCords();
   }
   changeMapCords() {
-    this.map.panTo([this.latitude, this.longitude]);
+    const bounds = L.latLng(this.latitude, this.longitude);
+
+    this.map.flyTo(bounds, 11, {
+      duration: 4,
+      zoomOffset: 4,
+    });
   }
   setCircle() {
     return L.circle([this.latitude, this.longitude], {
