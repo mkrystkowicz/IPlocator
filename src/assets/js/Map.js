@@ -27,7 +27,7 @@ class Map {
   setMap() {
     this.map = L.map('map-container').setView(
       [this.latitude, this.longitude],
-      13
+      4
     );
 
     this.setMapBounds();
