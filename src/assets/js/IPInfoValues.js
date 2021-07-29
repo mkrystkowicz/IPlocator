@@ -1,5 +1,7 @@
 import DOMElements from './DOMElements';
 
+const collapsedContainerClasses = ['opacity-5', 'pointer-events-none'];
+
 class IPInfoValues {
   constructor(DOMElement) {
     this.ipInfoContainer = DOMElement;
@@ -22,11 +24,11 @@ class IPInfoValues {
   }
   collapseContainer(state) {
     if (state) {
-      this.ipInfoContainer.classList.toggle('opacity-5');
-      this.ipInfoContainer.classList.toggle('pointer-events-none');
+      collapsedContainerClasses.forEach(item =>
+        this.ipInfoContainer.classList.toggle(item)
+      );
     } else {
-      this.ipInfoContainer.classList.remove('opacity-5');
-      this.ipInfoContainer.classList.remove('pointer-events-none');
+      this.ipInfoContainer.classList.remove(...collapsedContainerClasses);
     }
   }
 }
