@@ -1,4 +1,3 @@
-require('dotenv').config();
 import 'leaflet/dist/leaflet.css';
 import { CIRCLE_OPTIONS, DEFAULT_MAP_OPTIONS } from './MapOptions';
 import * as L from 'leaflet';

@@ -1,4 +1,3 @@
-require('dotenv').config();
 import 'regenerator-runtime/runtime';
 
 export default async function getIPLocation(IPAddress) {
