@@ -1,5 +1,6 @@
 require('dotenv').config();
 import 'leaflet/dist/leaflet.css';
+import { CIRCLE_OPTIONS, DEFAULT_MAP_OPTIONS } from './MapOptions';
 import * as L from 'leaflet';
 
 class Map {
@@ -22,12 +23,9 @@ class Map {
     });
   }
   setCircle() {
-    return L.circle([this.latitude, this.longitude], {
-      color: '#374151',
-      fillColor: '#9CA3AF',
-      fillOpacity: 0.4,
-      radius: 750,
-    }).addTo(this.map);
+    return L.circle([this.latitude, this.longitude], CIRCLE_OPTIONS).addTo(
+      this.map
+    );
   }
   setMap() {
     this.map = L.map('map-container').setView(
@@ -40,15 +38,7 @@ class Map {
   setTileLayer() {
     L.tileLayer(
       'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
-      {
-        attribution: false,
-        minZoom: 3,
-        maxZoom: 13,
-        id: 'mapbox/dark-v10',
-        tileSize: 512,
-        zoomOffset: -1,
-        accessToken: process.env.LEAFLET_ACCESS_KEY,
-      }
+      DEFAULT_MAP_OPTIONS
     ).addTo(this.map);
   }
   setMapBounds() {
