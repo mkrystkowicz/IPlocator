@@ -1,8 +1,4 @@
-const invalidInputStyles = [
-  'shadow-inner',
-  'placeholder-red-700',
-  'text-red-700',
-];
+const invalidInputStyles = ['shadow-inner', 'placeholder-red-700', 'text-red-700'];
 
 class Input {
   constructor(DOMElement) {
@@ -15,8 +11,7 @@ class Input {
     return (this.input.value = newValue);
   }
   validateInput() {
-    const validInputPattern =
-      /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+    const validInputPattern = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
 
     if (validInputPattern.test(this.input.value)) {
       return true;
