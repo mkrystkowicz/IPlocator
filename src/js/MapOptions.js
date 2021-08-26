@@ -9,8 +9,8 @@ export const DEFAULT_MAP_OPTIONS = {
 };
 
 export const CIRCLE_OPTIONS = {
-  color: '#374151',
-  fillColor: '#9CA3AF',
+  color: '#262626',
+  fillColor: '#D4D4D4',
   fillOpacity: 0.4,
   radius: 750,
 };
